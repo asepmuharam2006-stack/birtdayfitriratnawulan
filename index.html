@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special for My Universe ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Pacifico&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff85a1;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            margin: 0; height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(-45deg, #ff9a9e, #fecfef, #feada6, #ffd1ff);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 85%; max-width: 400px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.2);
+            text-align: center;
+            position: relative; z-index: 10;
+        }
+
+        .slide { display: none; animation: slideUp 0.7s ease-out; }
+        .slide.active { display: block; }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .photo-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 10px; margin-bottom: 20px;
+        }
+        .photo-grid img {
+            width: 100%; height: 120px;
+            object-fit: cover; border-radius: 15px;
+            border: 3px solid #fff;
+        }
+        .photo-grid img:first-child { grid-column: span 2; height: 180px; }
+
+        h1 { font-family: 'Pacifico', cursive; color: var(--primary); margin: 10px 0; }
+        .quote { font-family: 'Dancing Script', cursive; font-size: 1.6rem; color: #444; margin: 15px 0; }
+        p { color: #555; line-height: 1.7; font-size: 0.95rem; }
+
+        button {
+            background: var(--primary); color: white; border: none;
+            padding: 12px 30px; border-radius: 50px;
+            font-weight: 600; cursor: pointer; transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+            margin-top: 10px;
+        }
+        button:hover { transform: scale(1.05); background: #ff758c; }
+
+        .heart {
+            position: absolute; pointer-events: none;
+            animation: floatUp 4s linear infinite;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="slide active" id="slide1">
+            <h1>Hai, Cantik... ✨</h1>
+            <p>Hari ini adalah hari yang paling spesial, bukan cuma buat kamu, tapi juga buat aku.</p>
+            <button onclick="nextSlide(2)">Klik di sini ❤️</button>
+        </div>
+
+        <div class="slide" id="slide2">
+            <h1>Selamat Ulang Tahun Fitri Ratna Wulan! 🎉</h1>
+            <p>Aku bersyukur banget sama Tuhan karena udah ngirim kamu ke dunia, dan lebih bersyukur lagi karena aku yang bisa dampingin kamu sekarang.</p>
+            <button onclick="nextSlide(3)">Lanjut...</button>
+        </div>
+
+        <div class="slide" id="slide3">
+            <p class="quote">"In my eyes, you are perfection."</p>
+            <p>Makasih ya udah jadi orang yang selalu sabar ngadepin aku. Kamu itu alasan aku buat selalu pengen jadi versi terbaik setiap harinya.</p>
+            <button onclick="nextSlide(4)">Next 🌸</button>
+        </div>
+
+        <div class="slide" id="slide4">
+            <h1>Tentang Kita...</h1>
+            <p>Aku nggak tau apa yang bakal terjadi di depan nanti, tapi satu hal yang aku tau pasti: Aku mau jalanin semuanya bareng kamu.</p>
+            <button onclick="nextSlide(5)">Terus?</button>
+        </div>
+
+        <div class="slide" id="slide5">
+            <p class="quote">"I'm stay, no matter what."</p>
+            <p>Makasih udah jadi rumah tempat aku pulang. Jangan pernah merasa sendiri ya, karena aku bakal selalu ada di belakang kamu buat jaga kamu.</p>
+            <button onclick="nextSlide(6)">Ada pesan lagi ✨</button>
+        </div>
+
+        <div class="slide" id="slide6">
+            <h1>For Your Info..</h1>
+            <p>Dunia mungkin berisik, tapi pas sama kamu, rasanya semuanya jadi tenang. Makasih udah jadi ketenangan di hidup aku.</p>
+            <button onclick="nextSlide(7)">Satu lagi.. ❤️</button>
+        </div>
+
+        <div class="slide" id="slide7">
+            <h1>Look at This..</h1>
+            <p>Sebelum ke doa-doa aku buat kamu, coba liat deh beberapa momen yang udah kita lewatin bareng-bareng. Aku suka banget liat senyum kamu di sini.</p>
+            <button onclick="nextSlide(8)">Lihat Foto 📸</button>
+        </div>
+
+        <div class="slide" id="slide8">
+            <div class="photo-grid">
+                <img src="foto1.jpg" onerror="this.src='https://placehold.co/400x300?text=Foto+1'">
+                <img src="foto2.jpg" onerror="this.src='https://placehold.co/400x300?text=Foto+2'">
+                <img src="foto3.jpg" onerror="this.src='https://placehold.co/400x300?text=Foto+3'">
+            </div>
+            <p>Setiap momen sama kamu itu berharga banget buat aku.</p>
+            <button onclick="nextSlide(9)">Foto Lainnya</button>
+        </div>
+
+        <div class="slide" id="slide9">
+            <div class="photo-grid">
+                <img src="foto4.jpg" onerror="this.src='https://placehold.co/400x300?text=Foto+4'">
+                <img src="foto5.jpg" onerror="this.src='https://placehold.co/400x300?text=Foto+5'">
+                <img src="foto6.jpg" onerror="this.src='https://placehold.co/400x300?text=Foto+6'">
+            </div>
+            <p>Tetap jadi kamu yang hebat ya, sayang.</p>
+            <button onclick="nextSlide(10)">Doa Aku Buat Kamu ❤️</button>
+        </div>
+
+        <div class="slide" id="slide10">
+            <h1>My Best Prayers... 🙏</h1>
+            <p>Semoga kamu selalu sehat, dilancarkan segala urusannya, dan dikelilingi orang-orang baik. Aku berdoa semoga kebahagiaan kamu nggak pernah habis.</p>
+            <p class="quote">I Love You Today, Tomorrow, and Always.</p>
+            <p style="font-size: 0.8rem; color: #ff4d6d;">— Selamanya sama aku ya? —</p>
+        </div>
+    </div>
+
+    <script>
+        function nextSlide(n) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            document.getElementById('slide' + n).classList.add('active');
+            if(n >= 2) spawnHearts();
+        }
+
+        function spawnHearts() {
+            setInterval(() => {
+                const h = document.createElement('div');
+                h.classList.add('heart');
+                h.innerHTML = ['❤️', '💖', '💕', '💗', '✨'][Math.floor(Math.random() * 5)];
+                h.style.left = Math.random() * 100 + 'vw';
+                h.style.fontSize = Math.random() * 20 + 10 + 'px';
+                h.style.animationDuration = Math.random() * 2 + 3 + 's';
+                document.body.appendChild(h);
+                setTimeout(() => h.remove(), 4000);
+            }, 300);
+        }
+    </script>
+</body>
+</html>
